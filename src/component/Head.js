@@ -36,10 +36,6 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     display: 'flex',
     borderRadius: theme.shape.borderRadius,
-    // backgroundColor: fade(theme.palette.common.white, 0.25),
-    // '&:hover': {
-    //   backgroundColor: fade(theme.palette.common.white, 0.25),
-    // },
     backgroundColor: '#343a40',
     marginLeft: 0,
     width: '100%',
@@ -79,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Head() {
   const classes = useStyles();
-  const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -121,7 +116,6 @@ export default function Head() {
               <SearchIcon />
             </div>
           </div>
-          {auth && (
             <div>
               <IconButton
                 aria-label="account of current user"
@@ -155,7 +149,6 @@ export default function Head() {
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
               </Menu>
             </div>
-          )}
         </Toolbar>
       </AppBar>
   );
