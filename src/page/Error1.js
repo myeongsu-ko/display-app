@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Container from '@material-ui/core/Container';
+import { HandleSHowHeader, showHeaderContext } from '../App';
+
+
 
 const Error1 = () => {
+    const handleShowHeader = useContext(HandleSHowHeader);
+    const showHeader = useContext(showHeaderContext);
+    useEffect(()=> {
+        showHeader && handleShowHeader();
+        return () => {
+            !showHeader && handleShowHeader();
+        }
+    })
+
     return (
         <div>
-            <Container maxWidth="sm">401</Container>
+            <h1>404에러</h1>
         </div>
     );
 };

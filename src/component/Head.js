@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+
   headcolor:{
     backgroundColor: '#343a40',
-    
   },
 
   menuButton: {
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius:'20px 20px 20px 20px',
     backgroundColor:'white',
     color: '#495057',
-    
+
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -75,17 +75,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Head() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = React.useState(null); //앱바 우측에 있는 프로필 눌렸는지 여부
+  const open = Boolean(anchorEl); //프로필 메뉴 오픈여부를 Boolean로 확인하기 위함
 
-  const handleMenu = (event) => {
+  const handleMenu = (event) => { //프로필 열기
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = () => { //프로필 닫기
     setAnchorEl(null);
   };
-
+      
   return (
       <AppBar position="fixed" style={{zIndex:'1202'}}> 
         <Toolbar className={classes.headcolor}>

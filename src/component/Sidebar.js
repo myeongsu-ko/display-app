@@ -87,13 +87,13 @@ const Sidebar = () => {
               </ListItem>
               {showing1 && <ListItem style={{textAlign:'center'}}  button onClick={toggleShowing2}><ListItemText primary="Authentication" /><ExpandMoreIcon style={{marginLeft:-30}}/></ListItem>}
 
-              {showing2 && <ListItem style={{textAlign:'center', display:'inline-block'}} button><ListItemText primary="Login" /></ListItem>}
+              {showing2 && <Link to="/login" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center', display:'inline-block'}} button><ListItemText primary="Login" /></ListItem></Link>}
               {showing2 && <ListItem style={{textAlign:'center'}} button><ListItemText primary="Register" /></ListItem>}
-              {showing2 && <ListItem style={{textAlign:'center'}} button><ListItemText primary="Forgot Password" /></ListItem>}
+              {showing2 && <Link to="/forget" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button><ListItemText primary="Forgot Password" /></ListItem></Link>}
 
               {showing1 && <ListItem style={{textAlign:'center'}} button onClick={toggleShowing3}><ListItemText primary="Error" /><ExpandMoreIcon style={{marginLeft:35}}/></ListItem>}
               
-              {showing3 && <ListItem style={{textAlign:'center'}} button><ListItemText primary="401 Page" /></ListItem>}
+              {showing3 && <Link to="/404" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button><ListItemText primary="401 Page" /></ListItem></Link>}
               {showing3 && <ListItem style={{textAlign:'center'}} button><ListItemText primary="404 Page" /></ListItem>}
               {showing3 && <ListItem style={{textAlign:'center'}} button><ListItemText primary="500 Page" /></ListItem>}             
               <p style={{fontSize:'15px',marginLeft:20}}>ADDONS</p>
