@@ -50,8 +50,14 @@ const Sidebar = () => {
     const [showing, setShowing] = useState(false);
     const [showing1, setShowing1] = useState(false); 
     const toggleShowing = () => setShowing(!showing);
-    const toggleShowing1 = () => setShowing1(!showing1);
-    const [showing3, setShowing3] = useState(false); 
+    const toggleShowing1 = () => {
+      
+        //setShowing(false);
+        setShowing2(false);
+        setShowing3(false);
+      setShowing1(!showing1)
+    };
+    const [showing3, setShowing3] = useState(false);
     const [showing2, setShowing2] = useState(false);
     const toggleShowing2 = () => setShowing2(!showing2);
     const toggleShowing3 = () => setShowing3(!showing3); 
@@ -80,30 +86,33 @@ const Sidebar = () => {
               </ListItem>
               {showing && <Link to="/static" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center', marginLeft:0}} button><ListItemText  primary="Static Navigation" /></ListItem></Link>}
               {showing && <Link to="/light" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button ><ListItemText primary="Light Sidenav" /></ListItem></Link>}
+              
+              
               <ListItem button onClick={toggleShowing1}>
                 <ListItemIcon className={classes.drawerContainer}><BookIcon/></ListItemIcon>
                 <ListItemText primary="Page"/>
                 <ExpandMoreIcon/>
               </ListItem>
+
               {showing1 && <ListItem style={{textAlign:'center'}}  button onClick={toggleShowing2}><ListItemText primary="Authentication" /><ExpandMoreIcon style={{marginLeft:-30}}/></ListItem>}
 
               {showing2 && <Link to="/login" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center', display:'inline-block'}} button><ListItemText primary="Login" /></ListItem></Link>}
-              {showing2 && <ListItem style={{textAlign:'center'}} button><ListItemText primary="Register" /></ListItem>}
+              {showing2 && <Link to="/login" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button><ListItemText primary="Register" /></ListItem></Link>}
               {showing2 && <Link to="/forget" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button><ListItemText primary="Forgot Password" /></ListItem></Link>}
 
               {showing1 && <ListItem style={{textAlign:'center'}} button onClick={toggleShowing3}><ListItemText primary="Error" /><ExpandMoreIcon style={{marginLeft:35}}/></ListItem>}
               
-              {showing3 && <Link to="/404" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button><ListItemText primary="401 Page" /></ListItem></Link>}
-              {showing3 && <ListItem style={{textAlign:'center'}} button><ListItemText primary="404 Page" /></ListItem>}
-              {showing3 && <ListItem style={{textAlign:'center'}} button><ListItemText primary="500 Page" /></ListItem>}             
+              {showing3 && <Link to="/401" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button><ListItemText primary="401 Page" /></ListItem></Link>}
+              {showing3 && <Link to="/404" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button><ListItemText primary="404 Page" /></ListItem></Link>}
+              {showing3 && <Link to="/500" style={{ textDecoration: 'none', color:'inherit' }}><ListItem style={{textAlign:'center'}} button><ListItemText primary="500 Page" /></ListItem></Link>}             
               <p style={{fontSize:'15px',marginLeft:20}}>ADDONS</p>
               <ListItem button>
                 <ListItemIcon className={classes.drawerContainer}><MapIcon/></ListItemIcon>
-                <ListItemText primary="Chart" />
+                <Link to="/chart" style={{ textDecoration: 'none', color:'inherit' }}><ListItemText primary="Chart" /></Link>
               </ListItem>
               <ListItem button>
                 <ListItemIcon className={classes.drawerContainer}><InboxIcon/></ListItemIcon>
-                <ListItemText primary="Table" />
+                <Link to="/table" style={{ textDecoration: 'none', color:'inherit' }}><ListItemText primary="Table" /></Link>
               </ListItem>
           </List>
         </div>

@@ -3,6 +3,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import Charts from '../Charts';
 
 const useStyles = makeStyles((theme) => ({
     content: {
@@ -64,6 +65,7 @@ const Main = () => {
           </Paper>
         </Grid>
       </Grid>
+      <Charts/>
         </div>
     );
 };

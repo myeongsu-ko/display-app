@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Container from '@material-ui/core/Container';
-import { HandleSHowHeader, showHeaderContext } from '../App';
+import { HandleSHowHeader, showHeaderContext } from '../../App';
 
 
 
@@ -16,7 +16,7 @@ const Error1 = () => {
 
     return (
         <div>
-            <h1>404에러</h1>
+            <h1>401에러</h1>
         </div>
     );
 };
